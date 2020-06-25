@@ -18,6 +18,9 @@
         </p>
         <p><a class="btn btn-default" href="http://go.microsoft.com/fwlink/?LinkId=301865">Learn more &raquo;</a></p>
     </div>
+
+
+
     <div class="col-md-4">
         <h2>Get more libraries</h2>
         <p>NuGet is a free Visual Studio extension that makes it easy to add, remove, and update libraries and tools in Visual Studio projects.</p>
@@ -29,3 +32,35 @@
         <p><a class="btn btn-default" href="http://go.microsoft.com/fwlink/?LinkId=301867">Learn more &raquo;</a></p>
     </div>
 </div>
+
+<ul class="course">
+@foreach (var course int Model)
+{
+<li>
+<div class="date">
+<div class="month">
+ @course.DateTime.ToString("MM")
+</div>
+
+<div class="day">
+ @course.DateTime.ToString("dd")
+</div>
+</div>
+
+<div class="details">
+<span class="lecturer">
+ @course.Lecturer.Name
+
+</span>
+<span class="category">
+
+ @course.Category.Name
+
+</span>
+
+
+
+</div>
+</li>
+}
+</ul>

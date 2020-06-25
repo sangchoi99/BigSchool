@@ -1,25 +1,29 @@
-﻿using System;
+﻿using BigShool.Models;
+using BigShool.ViewModels;
+using Microsoft.AspNet.Identity;
+using System;
 using System.Collections.Generic;
+using System.Data.Entity;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using Microsoft.AspNet.Identity.Owin;
 
 namespace BigShool.Controllers
 {
     public class HomeController : Controller
     {
-       private ApplicationDbContext_dbConText;
-        public HomeController
-            {
-            _dbContext = new ApplicationDbConText();
-            }
         public ActionResult Index()
         {
-        var upcommingCourses = _dbContext.Courses
-            .Include(char => c.Lecture)
-            .Include(char => c.Category)
-           .Where(c => c.DateTime > DateTime.Now);
-        return View(upcommingCourses);
+            //BigSchoolContext context = new BigSchoolContext();
+            //var upcomingCourse = context.Courses.Where(p => p.DateTime > DateTime.Now).OrderBy(p => p.DateTime).ToList();
+            //foreach (Course i in upcomingCourse)
+            //{
+            //    ApplicationUser user = System.Web.HttpContext.Current.GetOwinContext().GetUserManager<ApplicationUserManager>().FindById(i.LeturerId);
+            //    i.Name = user.Name;
+            //}
+            //return View(upcomingCourse);
+            return View();
         }
 
         public ActionResult About()
