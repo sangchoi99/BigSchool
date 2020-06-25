@@ -16,6 +16,10 @@
     white-space: normal;
 }
 
+.navbar-inverse {
+    background-color: #7dc3ff;
+    border-color: #080808;
+}
 /* Set width on the form input elements since they're 100% wide by default */
 input,
 select,

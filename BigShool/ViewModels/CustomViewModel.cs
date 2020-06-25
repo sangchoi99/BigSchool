@@ -6,9 +6,10 @@ using System.Globalization;
 using System.Linq;
 using System.Web;
 
-public class VaidTime : ValidationAttribute
+
+public class CustomViewModel : ValidationAttribute
 {
-    [Required]
+  [Required]
     public string Place { get; set; }
     [Required]
     [FutureDate]

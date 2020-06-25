@@ -8,9 +8,18 @@ namespace BigShool.Controllers
 {
     public class HomeController : Controller
     {
+       private ApplicationDbContext_dbConText;
+        public HomeController
+            {
+            _dbContext = new ApplicationDbConText();
+            }
         public ActionResult Index()
         {
-            return View();
+        var upcommingCourses = _dbContext.Courses
+            .Include(char => c.Lecture)
+            .Include(char => c.Category)
+           .Where(c => c.DateTime > DateTime.Now);
+        return View(upcommingCourses);
         }
 
         public ActionResult About()

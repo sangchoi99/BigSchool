@@ -38,7 +38,7 @@ namespace BigShool.ViewModels
                 out dateTime);
             return isValid;
 
-         //   return base.IsValid(value);
+         // return base.IsValid(value);
         }
     }
 
