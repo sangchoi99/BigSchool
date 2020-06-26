@@ -21,12 +21,12 @@ namespace BigSchool.Controllers
         // GET: Courses
         public ActionResult Create()
         {
-            var viewModel = new CourseViewModel
+            var ViewModel = new CourseViewModel
             {
-                Categories = _dbContext.Categories.ToList(),
-                Heading = "Add Course"
+                Categories = _dbContext.Categories.ToList()
+
             };
-            return View(viewModel);
+            return View(ViewModel);
         }
         [Authorize]
         [HttpPost]
@@ -48,7 +48,7 @@ namespace BigSchool.Controllers
             _dbContext.Courses.Add(course);
             _dbContext.SaveChanges();
 
-            return RedirectToAction("Mine", "Course");
+            return RedirectToAction("Mine", "Courses");
         }
 
         [Authorize]
